@@ -1,0 +1,30 @@
+<f:layout name="Default" />
+
+<f:section name="Title">New course</f:section>
+
+<f:section name="Content">
+	<p>Just fill out the following form to create a new course:</p>
+
+	<f:form action="create" objectName="newCourse">
+		<ol>
+			<li>
+				<label for="title">Title</label>
+				<f:form.textfield property="title" id="title" />
+			</li>
+
+			<li>
+				<label for="description">Description</label>
+				<f:form.textfield property="description" id="description" />
+			</li>
+
+			<li>
+				<label for="questions">Questions</label>
+				<f:form.textfield property="questions" id="questions" />
+			</li>
+
+			<li>
+				<f:form.submit value="Create" />
+			</li>
+		</ol>
+	</f:form>
+</f:section>

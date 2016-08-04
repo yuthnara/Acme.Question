@@ -1,0 +1,32 @@
+#                                                                        #
+# Routes configuration for the Question package                          #
+#                                                                        #
+#
+# In order to activate those routes, add the following snippet to the main
+# Routes.yaml file of your distribution:
+#
+
+-
+  name: 'Course index'
+  uriPattern: 'courses'
+  defaults:
+    '@package':    'Acme.Question'
+    '@controller': 'Course'
+    '@action':     'index'
+    '@format':     'html'
+
+-
+  name: 'Course actions'
+  uriPattern: 'courses/{@action}'
+  defaults:
+    '@controller': 'Course'
+
+-
+  name: 'Single course actions'
+  uriPattern: 'courses/{post}/{@action}'
+  defaults:
+    '@controller':  'Course'
+  routeParts:
+    post:
+      objectType: 'Acme\Question\Domain\Model\course'
+      uriPattern: '{title}'

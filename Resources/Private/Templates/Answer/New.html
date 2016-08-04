@@ -1,0 +1,30 @@
+<f:layout name="Default" />
+
+<f:section name="Title">New answer</f:section>
+
+<f:section name="Content">
+	<p>Just fill out the following form to create a new answer:</p>
+
+	<f:form action="create" objectName="newAnswer">
+		<ol>
+			<li>
+				<label for="content">Content</label>
+				<f:form.textfield property="content" id="content" />
+			</li>
+
+			<li>
+				<label for="right">Right</label>
+				<f:form.textfield property="right" id="right" />
+			</li>
+
+			<li>
+				<label for="question">Question</label>
+				<f:form.textfield property="question" id="question" />
+			</li>
+
+			<li>
+				<f:form.submit value="Create" />
+			</li>
+		</ol>
+	</f:form>
+</f:section>

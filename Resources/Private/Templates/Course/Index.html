@@ -1,0 +1,25 @@
+<f:layout name="Default" />
+
+<f:section name="Title">A list of courses</f:section>
+
+<f:section name="Content">
+	<f:if condition="{courses}">
+		<f:then>
+			<ul>
+				<f:for each="{courses}" as="course">
+					<li>
+						<f:link.action action="show" arguments="{course: course}">{course.name}</f:link.action>
+						<f:link.action action="edit" arguments="{course: course}">Edit</f:link.action>
+						<f:form action="delete" arguments="{course: course}">
+						<f:form.submit value="Delete" />
+						</f:form>
+					</li>
+				</f:for>
+			</ul>
+		</f:then>
+		<f:else>
+			<p>No courses created yet.</p>
+		</f:else>
+	</f:if>
+	<p><f:link.action action="new">Create a new course</f:link.action></p>
+</f:section>

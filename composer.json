@@ -1,0 +1,24 @@
+{
+    "name": "acme/question",
+    "description": "Course question and answer",
+    "type": "typo3-flow-package",
+    "authors": [
+        {
+            "name": "Rayuth You",
+            "email": "rayuth@web-essentials.asia"
+        }
+    ],
+    "require": {
+        "typo3/flow": "*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Acme\\Question": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3-flow": {
+            "package-key": "Acme.Question"
+        }
+    }
+}
