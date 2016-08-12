@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file original="" source-language="en" target-language="fr" datatype="plaintext">
+		<body>
+			<!-- Package -->
+			<trans-unit id="package.question">
+				<source>Acme.Question</source>
+			</trans-unit>
+			<trans-unit id="package.question.description">
+				<source>Question and answer</source>
+			</trans-unit>
+
+			<!-- Course -->
+			<trans-unit id="course.title">
+				<source>Title</source>
+			</trans-unit>
+			<trans-unit id="course.description">
+				<source>Description</source>
+			</trans-unit>
+			<trans-unit id="course.action.show">
+				<source>Show course {0}</source>
+			</trans-unit>
+			<trans-unit id="course.action.new">
+				<source>New course</source>
+			</trans-unit>
+			<trans-unit id="course.action.edit">
+				<source>Edit course "{0}"</source>
+			</trans-unit>
+			<trans-unit id="course.action.no_record">
+				<source>No course created yet.</source>
+			</trans-unit>
+			<trans-unit id="course.action.list">
+				<source>A list of courses</source>
+			</trans-unit>
+
+			<!-- Question -->
+			<trans-unit id="question.content">
+				<source>Content</source>
+			</trans-unit>
+			<trans-unit id="question.course">
+				<source>Course</source>
+			</trans-unit>
+			<trans-unit id="question.answers">
+				<source>Answers</source>
+			</trans-unit>
+			<trans-unit id="question.action.show">
+				<source>Show question</source>
+			</trans-unit>
+			<trans-unit id="question.action.new">
+				<source>New question</source>
+			</trans-unit>
+			<trans-unit id="question.action.edit">
+				<source>Edit question</source>
+			</trans-unit>
+			<trans-unit id="question.action.no_record">
+				<source>No question created yet.</source>
+			</trans-unit>
+			<trans-unit id="question.action.previous">
+				<source>⇽ previous question</source>
+			</trans-unit>
+			<trans-unit id="question.action.next">
+				<source>next question ⇾</source>
+			</trans-unit>
+			<trans-unit id="question.action.list">
+				<source>A list of questions</source>
+			</trans-unit>
+
+			<!-- Answer -->
+			<trans-unit id="answer.content">
+				<source>Content</source>
+			</trans-unit>
+			<trans-unit id="answer.question">
+				<source>Question</source>
+			</trans-unit>
+			<trans-unit id="answer.correct">
+				<source>Correct</source>
+			</trans-unit>
+			<trans-unit id="answer.action.show">
+				<source>Show answer</source>
+			</trans-unit>
+			<trans-unit id="answer.action.new">
+				<source>New answer</source>
+			</trans-unit>
+			<trans-unit id="answer.action.edit">
+				<source>Edit answer</source>
+			</trans-unit>
+			<trans-unit id="answer.action.no_record">
+				<source>No answer created yet.</source>
+			</trans-unit>
+			<trans-unit id="answer.action.list">
+				<source>A list of answers</source>
+			</trans-unit>
+
+			<!-- Assessment -->
+			<trans-unit id="assessment.title">
+				<source>Assessment</source>
+			</trans-unit>
+
+			<!-- Other -->
+			<trans-unit id="page.title">
+				<source>Question and answer</source>
+			</trans-unit>
+			<trans-unit id="page.by">
+				<source>Powered by Flow</source>
+			</trans-unit>
+			<trans-unit id="page.by.url">
+				<source>http://flow.typo3.org</source>
+			</trans-unit>
+			<trans-unit id="action.back">
+				<source>⇽ Back</source>
+			</trans-unit>
+			<trans-unit id="action.create">
+				<source>Create</source>
+			</trans-unit>
+			<trans-unit id="action.edit">
+				<source>Edit</source>
+			</trans-unit>
+			<trans-unit id="action.update">
+				<source>Update</source>
+			</trans-unit>
+			<trans-unit id="action.delete">
+				<source>Delete</source>
+			</trans-unit>
+			<trans-unit id="action.submit">
+				<source>Submit</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

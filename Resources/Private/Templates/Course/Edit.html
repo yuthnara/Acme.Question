@@ -1,28 +1,15 @@
-<f:layout name="Default" />
+<f:layout name="SubPage" />
 
-<f:section name="Title">Edit course "{course.name}"</f:section>
+<f:section name="Title"><f:translate id="course.action.edit" arguments="{0: '{course.title}'}" /></f:section>
 
 <f:section name="Content">
 	<f:form action="update" object="{course}" objectName="course">
-		<ol>
-			<li>
-				<label for="title">Title</label>
-				<f:form.textfield property="title" id="title" />
-			</li>
+		<label for="title"><f:translate id="course.title" /></label>
+		<f:form.textfield property="title" id="title" />
 
-			<li>
-				<label for="description">Description</label>
-				<f:form.textfield property="description" id="description" />
-			</li>
+		<label for="description"><f:translate id="course.description" /></label>
+		<f:form.textarea rows="5" cols="30" property="description" id="description" />
 
-			<li>
-				<label for="questions">Questions</label>
-				<f:form.textfield property="questions" id="questions" />
-			</li>
-
-			<li>
-				<f:form.submit value="Update" />
-			</li>
-		</ol>
+		<f:form.submit name="submit" value="{f:translate(id: 'action.update')}" />
 	</f:form>
 </f:section>

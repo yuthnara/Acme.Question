@@ -13,36 +13,36 @@ use Acme\Question\Domain\Model\Course;
 class CourseController extends ActionController {
 
 	/**
-	* @Flow\Inject
-	* @var CourseRepository
-	*/
+	 * @Flow\Inject
+	 * @var CourseRepository
+	 */
 	protected $courseRepository;
 
 	/**
-	* @return void
-	*/
+	 * @return void
+	 */
 	public function indexAction() {
 		$this->view->assign('courses', $this->courseRepository->findAll());
 	}
 
 	/**
-	* @param Course $course
-	* @return void
-	*/
+	 * @param Course $course
+	 * @return void
+	 */
 	public function showAction(Course $course) {
 		$this->view->assign('course', $course);
 	}
 
 	/**
-	* @return void
-	*/
+	 * @return void
+	 */
 	public function newAction() {
 	}
 
 	/**
-	* @param Course $newCourse
-	* @return void
-	*/
+	 * @param Course $newCourse
+	 * @return void
+	 */
 	public function createAction(Course $newCourse) {
 		$this->courseRepository->add($newCourse);
 		$this->addFlashMessage('Created a new course.');
@@ -50,17 +50,17 @@ class CourseController extends ActionController {
 	}
 
 	/**
-	* @param Course $course
-	* @return void
-	*/
+	 * @param Course $course
+	 * @return void
+	 */
 	public function editAction(Course $course) {
 		$this->view->assign('course', $course);
 	}
 
 	/**
-	* @param Course $course
-	* @return void
-	*/
+	 * @param Course $course
+	 * @return void
+	 */
 	public function updateAction(Course $course) {
 		$this->courseRepository->update($course);
 		$this->addFlashMessage('Updated the course.');
@@ -68,9 +68,9 @@ class CourseController extends ActionController {
 	}
 
 	/**
-	* @param Course $course
-	* @return void
-	*/
+	 * @param Course $course
+	 * @return void
+	 */
 	public function deleteAction(Course $course) {
 		$this->courseRepository->remove($course);
 		$this->addFlashMessage('Deleted a course.');

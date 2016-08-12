@@ -1,23 +1,48 @@
-<f:layout name="Default" />
+<f:layout name="SubPage" />
 
-<f:section name="Title">Show course"{course.name}"</f:section>
+<f:section name="Title"><f:translate id="course.action.show" arguments="{0: '{course.title}'}" /></f:section>
 
 <f:section name="Content">
-	<table>
-		<tr>
-			<th>Title</th>
-			<td>{course.title}</td>
-		</tr>
+	<div class="item">
+		<nav>
+			<ul>
+				<f:if condition="{previousQuestion}">
+					<li><f:link.action action="show" arguments="{question: previousQuestion}" rel="prev"><f:translate id="question.action.previous" /></f:link.action></li>
+				</f:if>
+				<f:if condition="{nextQuestion}">
+					<li class="next"><f:link.action action="show" arguments="{question: nextQuestion}" rel="next"><f:translate id="question.action.next" /></f:link.action></li>
+				</f:if>
+			</ul>
+		</nav>
+		<h2>
+			{course.title}
+		</h2>
+		<p>{course.description -> f:format.nl2br()}</p>
+		<f:if condition="{course.questions}">
+			<f:then>
+				<ul>
+					<f:for each="{course.questions}" as="question">
+						<li class="item">
+							<ul class="actions">
+								<li>
+									<f:link.action action="edit" arguments="{question: question}"><f:translate id="action.edit" /></f:link.action>
+								</li>
+								<li>
+									<f:form action="delete" arguments="{question: question}">
+										<f:form.submit name="delete" value="{f:translate(id: 'action.delete')}" />
+									</f:form>
+								</li>
+							</ul>
+							<h2><f:link.action action="show" arguments="{question: question}">{question.content}</f:link.action></h2>
+						</li>
+					</f:for>
+				</ul>
+			</f:then>
+			<f:else>
+				<p><f:translate id="course.action.no_record" /></p>
+			</f:else>
+		</f:if>
+	</div>
+	<f:link.action action="index"><f:translate id="action.back" /></f:link.action>
 
-		<tr>
-			<th>Description</th>
-			<td>{course.description}</td>
-		</tr>
-
-		<tr>
-			<th>Questions</th>
-			<td>{course.questions}</td>
-		</tr>
-	</table>
-	<f:link.action action="index">Back</f:link.action>
 </f:section>

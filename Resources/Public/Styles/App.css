@@ -123,7 +123,7 @@ header .description {
 	color: #e56508;
 }
 
-#content {
+#container {
 	width: 640px;
 	background: white none repeat scroll 0 0;
 	border: 1px solid #dddddd;
@@ -134,49 +134,60 @@ header .description {
 	min-height: 300px;
 }
 
-.post {
+.item {
 	padding-bottom: 5px;
 	margin-bottom: 10px;
 	border-bottom: 1px dotted #ccc;
 }
-.post, .comment {
+.item, .comment {
 	list-style: none none;
 }
 
-.post .metadata {
+.item .metadata {
 	font-size: 11px;
 	font-style: italic;
 	color: #999;
 	margin: 10px 0 0 0;
 }
-.post .actions {
+.item .actions {
 	float: right;
 }
-.post .actions li {
+.item .actions li {
 	padding: 0;
 	margin: 0 0 0 5px;
 	list-style-type: none;
 	float: left;
 }
-.post .actions li a, .post .actions li input[type=submit] {
+
+i.correct:before {
+	content: "\274D";
+	font-size: 20px;
+}
+
+i.incorrect:before {
+	content: "\2718";
+	font-size: 20px;
+}
+
+.item .actions li a, .item .actions li input[type=submit] {
 	padding: 4px;
 	display: block;
 	font-size: 13px;
 }
-.post nav ul {
+.item nav ul {
 	margin: -20px -50px 10px -50px;
 	padding: 5px 10px 0 10px;
 	background: #f0f0f0;
 	border-bottom: 1px solid #eee;
 	height: 20px;
 }
-.post nav ul li {
+.item nav ul li {
 	margin: 0;
 	padding: 0;
 	float: left;
 	list-style: none;
 }
-.post nav ul li.next {
+.item nav ul li.next {
 	float: right;
 }
 

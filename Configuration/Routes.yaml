@@ -10,10 +10,9 @@
   name: 'Course index'
   uriPattern: 'courses'
   defaults:
-    '@package':    'Acme.Question'
+    '@package': 'Acme.Question'
     '@controller': 'Course'
-    '@action':     'index'
-    '@format':     'html'
+    '@action': 'index'
 
 -
   name: 'Course actions'
@@ -23,10 +22,95 @@
 
 -
   name: 'Single course actions'
-  uriPattern: 'courses/{post}/{@action}'
+  uriPattern: 'courses/{course}/{@action}'
   defaults:
-    '@controller':  'Course'
+    '@controller': 'Course'
   routeParts:
-    post:
-      objectType: 'Acme\Question\Domain\Model\course'
+    course:
+      objectType: 'Acme\Question\Domain\Model\Course'
       uriPattern: '{title}'
+
+-
+  name: 'Question index'
+  uriPattern: 'course/{course}/question'
+  defaults:
+    '@controller': 'Question'
+    '@action': 'index'
+  routeParts:
+    course:
+      objectType: 'Acme\Question\Domain\Model\Course'
+      uriPattern: '{title}'
+
+-
+  name: 'Question actions'
+  uriPattern: 'course/{course}/question/{@action}'
+  defaults:
+    '@controller': 'Question'
+  routeParts:
+    course:
+      objectType: 'Acme\Question\Domain\Model\Course'
+      uriPattern: '{title}'
+
+-
+  name: 'Single question'
+  uriPattern: 'course/{course}/question/{question}'
+  defaults:
+    '@controller': 'Question'
+    '@action': 'show'
+  routeParts:
+    course:
+      objectType: 'Acme\Question\Domain\Model\Course'
+      uriPattern: '{title}'
+    question:
+      objectType: 'Acme\Question\Domain\Model\Question'
+
+-
+  name: 'Single question actions'
+  uriPattern: 'course/{course}/question/{question}/{@action}'
+  defaults:
+    '@controller': 'Question'
+  routeParts:
+    course:
+      objectType: 'Acme\Question\Domain\Model\Course'
+      uriPattern: '{title}'
+    question:
+      objectType: 'Acme\Question\Domain\Model\Question'
+
+-
+  name: 'Answer index'
+  uriPattern: 'course/{course}/questions/{question}/answers'
+  defaults:
+    '@controller': 'Answer'
+    '@action': 'index'
+  routeParts:
+    course:
+      objectType: 'Acme\Question\Domain\Model\Course'
+      uriPattern: '{title}'
+    question:
+      objectType: 'Acme\Question\Domain\Model\Question'
+
+-
+  name: 'Answer actions'
+  uriPattern: 'course/{course}/question/{question}/answer/{@action}'
+  defaults:
+    '@controller': 'Answer'
+  routeParts:
+    course:
+      objectType: 'Acme\Question\Domain\Model\Course'
+      uriPattern: '{title}'
+    question:
+      objectType: 'Acme\Question\Domain\Model\Question'
+
+-
+  name: 'Single answer actions'
+  uriPattern: 'course/{course}/question/{question}/answer/{answer}/{@action}'
+  defaults:
+    '@controller': 'Answer'
+  routeParts:
+    course:
+      objectType: 'Acme\Question\Domain\Model\Course'
+      uriPattern: '{title}'
+    question:
+      objectType: 'Acme\Question\Domain\Model\Question'
+    answer:
+      objectType: 'Acme\Question\Domain\Model\Answer'

@@ -1,30 +1,15 @@
-<f:layout name="Default" />
+<f:layout name="SubPage" />
 
-<f:section name="Title">New course</f:section>
+<f:section name="Title"><f:translate id="course.action.new" /></f:section>
 
 <f:section name="Content">
-	<p>Just fill out the following form to create a new course:</p>
-
 	<f:form action="create" objectName="newCourse">
-		<ol>
-			<li>
-				<label for="title">Title</label>
-				<f:form.textfield property="title" id="title" />
-			</li>
+		<label for="title"><f:translate id="course.title" /></label>
+		<f:form.textfield property="title" id="title" />
 
-			<li>
-				<label for="description">Description</label>
-				<f:form.textfield property="description" id="description" />
-			</li>
+		<label for="description"><f:translate id="course.description" /></label>
+		<f:form.textarea rows="5" cols="30" property="description" id="description" />
 
-			<li>
-				<label for="questions">Questions</label>
-				<f:form.textfield property="questions" id="questions" />
-			</li>
-
-			<li>
-				<f:form.submit value="Create" />
-			</li>
-		</ol>
+		<f:form.submit name="submit" value="{f:translate(id: 'action.create')}" />
 	</f:form>
 </f:section>

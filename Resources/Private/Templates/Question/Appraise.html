@@ -1,0 +1,21 @@
+<f:layout name="SubPage" />
+
+<f:section name="Title"><f:translate id="assessment.title" /></f:section>
+
+<f:section name="Content">
+	<h2>{question.content}</h2>
+	<f:form action="appraise" objectName="question" arguments="{course: question.course}">
+		<ul>
+			<f:for each="{question.answers}" as="answer">
+				<li class="item">
+					<f:if condition="{question.multiple} > 1">
+						<f:then><f:form.checkbox name="answers" value="1" /></f:then>
+						<f:else><f:form.radio name="answers" value="1" /></f:else>
+					</f:if>
+					{answer.content}
+				</li>
+			</f:for>
+		</ul>
+		<f:form.submit value="{f:translate(id: 'action.submit')}" />
+	</f:form>
+</f:section>

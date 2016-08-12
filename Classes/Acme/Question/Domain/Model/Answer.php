@@ -25,7 +25,7 @@ class Answer {
 	 * @Flow\Validate(type="NotEmpty")
 	 * @var boolean
 	 */
-	protected $right = FALSE;
+	protected $correct = FALSE;
 
 	/**
 	 * @Flow\Validate(type="NotEmpty")
@@ -53,16 +53,16 @@ class Answer {
 	/**
 	 * @return boolean
 	 */
-	public function isRight() {
-		return $this->right;
+	public function isCorrect() {
+		return $this->correct;
 	}
 
 	/**
-	 * @param boolean $right
+	 * @param boolean $correct
 	 * @return void
 	 */
-	public function setRight($right) {
-		$this->right = $right;
+	public function setCorrect($correct) {
+		$this->correct = $correct;
 	}
 
 	/**

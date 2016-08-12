@@ -101,4 +101,18 @@ class Question {
 		$this->answers->removeElement($answer);
 	}
 
+	/**
+	 * @return int
+	 */
+	public function getMultiple() {
+		$answers = $this->getAnswers();
+		$i = 0;
+		/** @var Answer $answer */
+		foreach ($answers as $answer) {
+			if ($answer->isCorrect()) {
+				$i++;
+			}
+		}
+		return $i;
+	}
 }

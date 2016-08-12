@@ -1,28 +1,15 @@
-<f:layout name="Default" />
+<f:layout name="SubPage" />
 
-<f:section name="Title">Edit answer "{answer.name}"</f:section>
+<f:section name="Title"><f:translate id="answer.action.edit" /></f:section>
 
 <f:section name="Content">
 	<f:form action="update" object="{answer}" objectName="answer">
-		<ol>
-			<li>
-				<label for="content">Content</label>
-				<f:form.textfield property="content" id="content" />
-			</li>
+		<label for="content"><f:translate id="answer.content" /></label>
+		<f:form.textfield property="content" id="content" />
 
-			<li>
-				<label for="right">Right</label>
-				<f:form.textfield property="right" id="right" />
-			</li>
+		<label for="correct"><f:translate id="answer.correct" /></label>
+		<f:form.checkbox property="correct" id="correct" value="1" checked="{answer.correct} == 1" />
 
-			<li>
-				<label for="question">Question</label>
-				<f:form.textfield property="question" id="question" />
-			</li>
-
-			<li>
-				<f:form.submit value="Update" />
-			</li>
-		</ol>
+		<f:form.submit value="{f:translate(id: 'action.update')}" />
 	</f:form>
 </f:section>
