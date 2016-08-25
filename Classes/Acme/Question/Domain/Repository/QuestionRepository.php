@@ -25,7 +25,7 @@ class QuestionRepository extends Repository {
 		$query = $this->createQuery();
 		$rows = $course->getQuestions()->count();
 		$rowNumber = mt_rand(0, max(0, ($rows - 1)));
-		return $query->matching($query->equals('course', $course))->setOffset($rowNumber)->setLimit(1)->execute();
+		return $query->matching($query->equals('course', $course))->setOffset($rowNumber)->setLimit(1)->execute()->getFirst();
 	}
 
 }

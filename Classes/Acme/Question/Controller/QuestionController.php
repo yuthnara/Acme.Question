@@ -88,6 +88,9 @@ class QuestionController extends ActionController {
 	 * @return void
 	 */
 	public function appraiseAction(Course $course) {
+		if ($this->request->hasArgument('answers')) {
+			$answers = $this->request->getArgument('answers');
+		}
 		$this->view->assign('question', $this->questionRepository->findOneRandomByCourse($course));
 	}
 

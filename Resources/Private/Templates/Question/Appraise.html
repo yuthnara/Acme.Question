@@ -5,12 +5,12 @@
 <f:section name="Content">
 	<h2>{question.content}</h2>
 	<f:form action="appraise" objectName="question" arguments="{course: question.course}">
-		<ul>
+		<ul class="assessment">
 			<f:for each="{question.answers}" as="answer">
-				<li class="item">
+				<li>
 					<f:if condition="{question.multiple} > 1">
-						<f:then><f:form.checkbox name="answers" value="1" /></f:then>
-						<f:else><f:form.radio name="answers" value="1" /></f:else>
+						<f:then><f:form.checkbox name="answers" value="{answer}" /></f:then>
+						<f:else><f:form.radio name="answers" value="{answer}" /></f:else>
 					</f:if>
 					{answer.content}
 				</li>

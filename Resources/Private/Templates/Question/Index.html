@@ -22,7 +22,7 @@
 						</ul>
 						<h2>
 							<f:link.action action="index" controller="Answer" arguments="{question: question, course: course}">
-								{question.content}
+								<f:format.crop maxCharacters="50">{question.content}</f:format.crop>
 							</f:link.action>
 						</h2>
 					</li>

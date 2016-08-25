@@ -15,8 +15,8 @@ class Answer {
 
 	/**
 	 * @Flow\Validate(type="NotEmpty")
-	 * @Flow\Validate(type="StringLength", options={ "minimum"=1, "maximum"=250 })
-	 * @ORM\Column(length=250)
+	 * @Flow\Validate(type="StringLength", options={ "minimum"=1, "maximum"=500 })
+	 * @ORM\Column(length=500)
 	 * @var string
 	 */
 	protected $content = '';

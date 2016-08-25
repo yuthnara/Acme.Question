@@ -25,7 +25,7 @@
 						</ul>
 						<h2>
 							<f:link.action action="show" arguments="{answer: answer, question: answer.question, course: answer.question.course}">
-								{answer.content}
+								<f:format.crop maxCharacters="50">{answer.content}</f:format.crop>
 							</f:link.action>
 						</h2>
 					</li>

@@ -231,6 +231,9 @@ form label {
 form input {
 	clear: both;
 	border: 1px solid #dddddd;
+}
+
+form input[type=text] {
 	height: 20px;
 	width: 220px;
 }
@@ -303,4 +306,9 @@ input.typo3-form-error {
 
 .required {
 	color:#8a1f11;
+}
+
+/*--------------- Assessment ------------------*/
+ul.assessment li {
+	list-style: none;
 }

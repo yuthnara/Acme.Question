@@ -5,7 +5,7 @@
 <f:section name="Content">
 	<f:form action="update" object="{answer}" objectName="answer">
 		<label for="content"><f:translate id="answer.content" /></label>
-		<f:form.textfield property="content" id="content" />
+		<f:form.textarea rows="5" cols="30" property="content" id="content" />
 
 		<label for="correct"><f:translate id="answer.correct" /></label>
 		<f:form.checkbox property="correct" id="correct" value="1" checked="{answer.correct} == 1" />

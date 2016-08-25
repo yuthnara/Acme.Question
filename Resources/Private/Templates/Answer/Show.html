@@ -19,5 +19,5 @@
 			<td><i class="{f:if(condition: '{answer.correct} == 1', then: 'correct', else: 'incorrect')}"></i></td>
 		</tr>
 	</table>
-	<f:link.action action="index"><f:translate id="action.back" /></f:link.action>
+	<f:link.action action="index" arguments="{course: answer.question.course, question: answer.question}"><f:translate id="action.back" /></f:link.action>
 </f:section>
