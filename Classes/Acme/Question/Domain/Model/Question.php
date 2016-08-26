@@ -23,6 +23,13 @@ class Question {
 	protected $content = '';
 
 	/**
+	 * @Flow\Validate(type="StringLength", options={ "minimum"=1, "maximum"=500 })
+	 * @ORM\Column(length=500)
+	 * @var string
+	 */
+	protected $feedback = '';
+
+	/**
 	 * @Flow\Validate(type="NotEmpty")
 	 * @ORM\ManyToOne(inversedBy="questions")
 	 * @var Course
@@ -49,6 +56,21 @@ class Question {
 	 */
 	public function setContent($content) {
 		$this->content = $content;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getFeedback() {
+		return $this->feedback;
+	}
+
+	/**
+	 * @param string $feedback
+	 * @return void
+	 */
+	public function setFeedback($feedback) {
+		$this->feedback = $feedback;
 	}
 
 	/**
