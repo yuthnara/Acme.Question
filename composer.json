@@ -10,7 +10,7 @@
     ],
     "require": {
         "typo3/flow": "*",
-        "typo3/twitter-bootstrap": "2.2.0"
+        "typo3/twitter-bootstrap": "*"
     },
     "autoload": {
         "psr-0": {
