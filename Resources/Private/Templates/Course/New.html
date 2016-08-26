@@ -1,15 +1,25 @@
-<f:layout name="SubPage" />
+<f:layout name="Default" />
 
 <f:section name="Title"><f:translate id="course.action.new" /></f:section>
 
 <f:section name="Content">
-	<f:form action="create" objectName="newCourse">
-		<label for="title"><f:translate id="course.title" /></label>
-		<f:form.textfield property="title" id="title" />
+	<div class="row">
+		<f:form action="create" objectName="newCourse">
+			<div class="form-group">
+				<label for="title"><f:translate id="course.title" /></label>
+				<f:form.textfield property="title" id="title" class="form-control" />
+			</div>
 
-		<label for="description"><f:translate id="course.description" /></label>
-		<f:form.textarea rows="5" cols="30" property="description" id="description" />
+			<div class="form-group">
+				<label for="description"><f:translate id="course.description" /></label>
+				<f:form.textarea rows="5" cols="30" property="description" id="description" class="form-control" />
+			</div>
 
-		<f:form.submit name="submit" value="{f:translate(id: 'action.create')}" />
-	</f:form>
+			<f:link.action action="index">
+				<span class="glyphicon glyphicon-backward"></span>
+				<f:translate id="action.back" />
+			</f:link.action>
+			<f:form.submit name="submit" value="{f:translate(id: 'action.create')}" class="btn btn-primary pull-right" />
+		</f:form>
+	</div>
 </f:section>

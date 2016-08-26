@@ -1,48 +1,56 @@
-<f:layout name="SubPage" />
+<f:layout name="Default" />
 
 <f:section name="Title"><f:translate id="answer.action.list" /></f:section>
 
 <f:section name="Content">
-	<f:if condition="{question.answers}">
-		<f:then>
-			<f:if condition="{question.hint}">
-				<label><f:translate id="question.hint" /></label>
-				<p>{question.hint}</p>
-			</f:if>
-			<ul>
-				<f:for each="{question.answers}" as="answer">
-					<li class="item">
-						<ul class="actions">
-							<li>
+	<div class="row">
+		<p class="list-group">
+			<f:link.action action="index" arguments="{question: question, course: question.course}">
+				<span class="glyphicon glyphicon-backward"></span>
+				<f:translate id="action.back" />
+			</f:link.action>
+			<f:link.action action="new" arguments="{question: question, course: question.course}" class="btn btn-primary pull-right">
+				<span class="glyphicon glyphicon-plus"></span>
+				<f:translate id="answer.action.new" />
+			</f:link.action>
+		</p>
+	</div>
+
+	<div class="row">
+		<f:if condition="{question.answers}">
+			<f:then>
+				<f:if condition="{question.hint}">
+					<label><f:translate id="question.hint" /></label>
+					<p>{question.hint}</p>
+				</f:if>
+				<table class="table table-striped">
+					<f:for each="{question.answers}" as="answer">
+						<tr>
+							<td>
+								<f:link.action action="show" arguments="{answer: answer, question: answer.question, course: answer.question.course}">
+									<f:format.crop maxCharacters="50">{answer.content}</f:format.crop>
+								</f:link.action>
+							</td>
+							<td class="text-right">
 								<i class="{f:if(condition: '{answer.correct} == 1', then: 'correct', else: 'incorrect')}"></i>
-							</li>
-							<li>
+
 								<f:link.action action="edit" arguments="{answer: answer, question: answer.question, course: answer.question.course}">
+									<span class="glyphicon glyphicon-edit"></span>
 									<f:translate id="action.edit" />
 								</f:link.action>
-							</li>
-							<li>
-								<f:form action="delete" arguments="{answer: answer, question: answer.question, course: answer.question.course}">
+
+								<f:form action="delete" arguments="{answer: answer, question: answer.question, course: answer.question.course}" class="pull-right">
+									<span class="glyphicon"></span>
 									<f:form.submit value="{f:translate(id: 'action.delete')}" />
 								</f:form>
-							</li>
-						</ul>
-						<h2>
-							<f:link.action action="show" arguments="{answer: answer, question: answer.question, course: answer.question.course}">
-								<f:format.crop maxCharacters="50">{answer.content}</f:format.crop>
-							</f:link.action>
-						</h2>
-					</li>
-				</f:for>
-			</ul>
-		</f:then>
-		<f:else>
-			<p><f:translate id="answer.action.no_record" /></p>
-		</f:else>
-	</f:if>
-	<p>
-		<f:link.action action="new" arguments="{question: question, course: question.course}">
-			<f:translate id="answer.action.new" />
-		</f:link.action>
-	</p>
+							</td>
+						</tr>
+					</f:for>
+				</table>
+			</f:then>
+			<f:else>
+				<p><f:translate id="answer.action.no_record" /></p>
+			</f:else>
+		</f:if>
+	</div>
 </f:section>

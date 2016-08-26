@@ -3,36 +3,50 @@
 <f:section name="Title"><f:translate id="course.action.list" /></f:section>
 
 <f:section name="Content">
-	<f:if condition="{courses}">
-		<f:then>
-			<ul>
-				<f:for each="{courses}" as="course">
-					<li class="item">
-						<ul class="actions">
-							<li>
-								<f:link.action action="appraise" controller="Question" arguments="{course: course}">
+	<div class="row">
+		<p class="list-group">
+			<f:link.action action="index" controller="Standard" package="TYPO3.Welcome">
+				<span class="glyphicon glyphicon-backward"></span>
+				<f:translate id="action.back" />
+			</f:link.action>
+			<f:link.action action="new" class="btn btn-primary pull-right">
+				<span class="glyphicon glyphicon-plus"></span>
+				<f:translate id="course.action.new" />
+			</f:link.action>
+		</p>
+	</div>
+
+	<div class="row">
+		<f:if condition="{courses}">
+			<f:then>
+				<table class="table table-striped">
+					<f:for each="{courses}" as="course">
+						<tr>
+							<td>
+								<f:link.action action="index" controller="Question" arguments="{course: course}">{course.title}</f:link.action>
+							</td>
+							<td class="text-right">
+								<f:link.action action="appraise" controller="Question" arguments="{course: course}" class="btn btn-info">
 									<f:translate id="assessment.title" />
 								</f:link.action>
-							</li>
-							<li>
-								<f:link.action action="edit" arguments="{course: course}">
+
+								<f:link.action action="edit" arguments="{course: course}" class="btn btn-warning">
+									<span class="glyphicon glyphicon-edit"></span>
 									<f:translate id="action.edit" />
 								</f:link.action>
-							</li>
-							<li>
-								<f:form action="delete" arguments="{course: course}">
-									<f:form.submit name="delete" value="{f:translate(id: 'action.delete')}" />
+
+								<f:form action="delete" arguments="{course: course}" class="pull-right">
+									<span class="glyphicon"></span>
+									<f:form.submit name="delete" value="{f:translate(id: 'action.delete')}" class="btn btn-danger" />
 								</f:form>
-							</li>
-						</ul>
-						<h2><f:link.action action="index" controller="Question" arguments="{course: course}">{course.title}</f:link.action></h2>
-					</li>
-				</f:for>
-			</ul>
-		</f:then>
-		<f:else>
-			<p><f:translate id="course.action.no_record" /></p>
-		</f:else>
-	</f:if>
-	<p><f:link.action action="new"><f:translate id="course.action.new" /></f:link.action></p>
+							</td>
+						</tr>
+					</f:for>
+				</table>
+			</f:then>
+			<f:else>
+				<p><f:translate id="course.action.no_record" /></p>
+			</f:else>
+		</f:if>
+	</div>
 </f:section>

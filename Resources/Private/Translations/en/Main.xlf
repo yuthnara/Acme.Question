@@ -110,10 +110,16 @@
 				<source>http://flow.typo3.org</source>
 			</trans-unit>
 			<trans-unit id="action.back">
-				<source>⇽ Back</source>
+				<source>Back</source>
+			</trans-unit>
+			<trans-unit id="action.new">
+				<source>New</source>
 			</trans-unit>
 			<trans-unit id="action.create">
 				<source>Create</source>
+			</trans-unit>
+			<trans-unit id="action.save">
+				<source>Save</source>
 			</trans-unit>
 			<trans-unit id="action.edit">
 				<source>Edit</source>
