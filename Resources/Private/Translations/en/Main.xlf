@@ -37,8 +37,8 @@
 			<trans-unit id="question.content">
 				<source>Content</source>
 			</trans-unit>
-			<trans-unit id="question.feedback">
-				<source>Feedback</source>
+			<trans-unit id="question.hint">
+				<source>Hint</source>
 			</trans-unit>
 			<trans-unit id="question.course">
 				<source>Course</source>

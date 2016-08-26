@@ -5,6 +5,10 @@
 <f:section name="Content">
 	<f:if condition="{question.answers}">
 		<f:then>
+			<f:if condition="{question.hint}">
+				<label><f:translate id="question.hint" /></label>
+				<p>{question.hint}</p>
+			</f:if>
 			<ul>
 				<f:for each="{question.answers}" as="answer">
 					<li class="item">
@@ -31,8 +35,6 @@
 					</li>
 				</f:for>
 			</ul>
-			<f:translate id="question.feedback" />
-			<p>{question.feedback}</p>
 		</f:then>
 		<f:else>
 			<p><f:translate id="answer.action.no_record" /></p>

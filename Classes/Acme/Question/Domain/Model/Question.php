@@ -27,7 +27,7 @@ class Question {
 	 * @ORM\Column(length=500)
 	 * @var string
 	 */
-	protected $feedback = '';
+	protected $hint = '';
 
 	/**
 	 * @Flow\Validate(type="NotEmpty")
@@ -61,16 +61,16 @@ class Question {
 	/**
 	 * @return string
 	 */
-	public function getFeedback() {
-		return $this->feedback;
+	public function getHint() {
+		return $this->hint;
 	}
 
 	/**
-	 * @param string $feedback
+	 * @param string $hint
 	 * @return void
 	 */
-	public function setFeedback($feedback) {
-		$this->feedback = $feedback;
+	public function setHint($hint) {
+		$this->hint = $hint;
 	}
 
 	/**
