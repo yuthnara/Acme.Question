@@ -3,21 +3,25 @@
 <f:section name="Title"><f:translate id="answer.action.show" /></f:section>
 
 <f:section name="Content">
-	<table>
-		<tr>
-			<th><f:translate id="answer.question" /></th>
-			<td>{answer.question.content}</td>
-		</tr>
+	<div class="row">
+		<table class="table">
+			<tr>
+				<th><f:translate id="answer.question" /></th>
+				<td>{answer.question.content}</td>
+			</tr>
 
-		<tr>
-			<th><f:translate id="answer.content" /></th>
-			<td>{answer.content}</td>
-		</tr>
+			<tr>
+				<th><f:translate id="answer.content" /></th>
+				<td>{answer.content}</td>
+			</tr>
 
-		<tr>
-			<th><f:translate id="answer.correct" /></th>
-			<td><i class="{f:if(condition: '{answer.correct} == 1', then: 'correct', else: 'incorrect')}"></i></td>
-		</tr>
-	</table>
-	<f:link.action action="index" arguments="{course: answer.question.course, question: answer.question}"><f:translate id="action.back" /></f:link.action>
+			<tr>
+				<th><f:translate id="answer.correct" /></th>
+				<td>
+					<span class="glyphicon {f:if(condition: '{answer.correct} == 1', then: 'text-success glyphicon-ok-circle', else: 'text-danger glyphicon-remove-circle')}" aria-hidden="true"></span>
+				</td>
+			</tr>
+		</table>
+		<f:link.action action="index" arguments="{course: answer.question.course, question: answer.question}"><f:translate id="action.back" /></f:link.action>
+	</div>
 </f:section>

@@ -137,4 +137,11 @@ class Question {
 		}
 		return $i;
 	}
+
+	/**
+	 * @return int
+	 */
+	public function getNumberAnswer() {
+		return $this->getAnswers()->count();
+	}
 }

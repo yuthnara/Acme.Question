@@ -3,22 +3,24 @@
 <f:section name="Title"><f:translate id="answer.action.show" /></f:section>
 
 <f:section name="Content">
-	<table>
-		<tr>
-			<th><f:translate id="question.content" /></th>
-			<td>{question.content}</td>
-		</tr>
+	<div class="row">
+		<table class="table">
+			<tr>
+				<th><f:translate id="question.content" /></th>
+				<td>{question.content}</td>
+			</tr>
 
-		<tr>
-			<th><f:translate id="question.answers" /></th>
-			<td>
-				<ul>
-					<f:for each="{question.answers}" as="answer">
-						<li>{answer.content}</li>
-					</f:for>
-				</ul>
-			</td>
-		</tr>
-	</table>
-	<f:link.action action="index"><f:translate id="action.back" /></f:link.action>
+			<tr>
+				<th><f:translate id="question.answers" /></th>
+				<td>
+					<ul>
+						<f:for each="{question.answers}" as="answer">
+							<li>{answer.content}</li>
+						</f:for>
+					</ul>
+				</td>
+			</tr>
+		</table>
+		<f:link.action action="index"><f:translate id="action.back" /></f:link.action>
+	</div>
 </f:section>

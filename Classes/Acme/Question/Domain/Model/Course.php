@@ -101,4 +101,10 @@ class Course {
 		$this->questions->removeElement($question);
 	}
 
+	/**
+	 * @return int
+	 */
+	public function getNumberQuestion() {
+		return $this->getQuestions()->count();
+	}
 }

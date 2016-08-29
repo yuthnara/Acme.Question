@@ -3,19 +3,23 @@
 <f:section name="Title"><f:translate id="assessment.title" /></f:section>
 
 <f:section name="Content">
-	<h2>{question.content}</h2>
-	<f:form action="appraise" objectName="question" arguments="{course: question.course}">
-		<ul class="assessment">
-			<f:for each="{question.answers}" as="answer">
-				<li>
-					<f:if condition="{question.multiple} > 1">
-						<f:then><f:form.checkbox name="answers" value="{answer}" /></f:then>
-						<f:else><f:form.radio name="answers" value="{answer}" /></f:else>
-					</f:if>
-					{answer.content}
-				</li>
-			</f:for>
-		</ul>
-		<f:form.submit value="{f:translate(id: 'action.submit')}" />
-	</f:form>
+	<div class="row">
+		<p>
+			<span class="lead">{question.content}</span>
+			<f:form action="appraise" objectName="question" arguments="{course: question.course}">
+				<ul class="list-unstyled">
+					<f:for each="{question.answers}" as="answer">
+						<li>
+							<f:if condition="{question.multiple} > 1">
+								<f:then><f:form.checkbox name="answers" value="{answer}" /></f:then>
+								<f:else><f:form.radio name="answers" value="{answer}" /></f:else>
+							</f:if>
+							{answer.content}
+						</li>
+					</f:for>
+				</ul>
+				<f:form.submit value="{f:translate(id: 'action.submit')}" class="btn btn-primary" />
+			</f:form>
+		</p>
+	</div>
 </f:section>

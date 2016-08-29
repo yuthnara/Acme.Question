@@ -9,12 +9,11 @@
 				<label for="content"><f:translate id="answer.content" /></label>
 				<f:form.textarea rows="5" cols="30" property="content" id="content" class="form-control" />
 			</div>
-			<div class="form-group">
-				<label for="correct"><f:translate id="answer.correct" /></label>
-				<f:form.checkbox property="correct" id="correct" value="1" checked="{answer.correct} == 1" class="form-control" />
+			<div class="checkbox">
+				<label for="correct"><f:form.checkbox property="correct" id="correct" value="1" checked="{answer.correct} == 1" /><f:translate id="answer.correct" /></label>
 			</div>
 
-			<f:link.action action="index">
+			<f:link.action action="index" arguments="{question: answer.question, course: answer.question.course}">
 				<span class="glyphicon glyphicon-backward"></span>
 				<f:translate id="action.back" />
 			</f:link.action>

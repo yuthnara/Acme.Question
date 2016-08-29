@@ -3,15 +3,25 @@
 <f:section name="Title"><f:translate id="question.action.new" /></f:section>
 
 <f:section name="Content">
-	<f:form action="create" objectName="newQuestion" arguments="{course: course}">
-		<label for="content"><f:translate id="question.content" /></label>
-		<f:form.textarea rows="5" cols="30" property="content" id="content" />
+	<div class="row">
+		<f:form action="create" objectName="newQuestion" arguments="{course: course}">
+			<div class="form-group">
+				<label for="content"><f:translate id="question.content" /></label>
+				<f:form.textarea rows="5" cols="30" property="content" id="content" class="form-control" />
+			</div>
 
-		<label for="hint"><f:translate id="question.hint" /></label>
-		<f:form.textarea rows="5" cols="30" property="hint" id="hint" />
+			<div class="form-group">
+				<label for="hint"><f:translate id="question.hint" /></label>
+				<f:form.textarea rows="5" cols="30" property="hint" id="hint" class="form-control" />
+			</div>
 
-		<f:form.hidden property="course" id="course" value="{course}" />
+			<f:form.hidden property="course" id="course" value="{course}" />
 
-		<f:form.submit name="submit" value="{f:translate(id: 'action.create')}" />
-	</f:form>
+			<f:link.action action="index" arguments="{course: course}">
+				<span class="glyphicon glyphicon-backward"></span>
+				<f:translate id="action.back" />
+			</f:link.action>
+			<f:form.submit name="submit" value="{f:translate(id: 'action.create')}" class="btn btn-primary pull-right" />
+		</f:form>
+	</div>
 </f:section>

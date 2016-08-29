@@ -3,13 +3,23 @@
 <f:section name="Title"><f:translate id="course.action.edit" arguments="{0: '{course.title}'}" /></f:section>
 
 <f:section name="Content">
-	<f:form action="update" object="{course}" objectName="course">
-		<label for="title"><f:translate id="course.title" /></label>
-		<f:form.textfield property="title" id="title" />
+	<div class="row">
+		<f:form action="update" object="{course}" objectName="course">
+			<div class="form-group">
+				<label for="title"><f:translate id="course.title" /></label>
+				<f:form.textfield property="title" id="title" class="form-control" />
+			</div>
 
-		<label for="description"><f:translate id="course.description" /></label>
-		<f:form.textarea rows="5" cols="30" property="description" id="description" />
+			<div class="form-group">
+				<label for="description"><f:translate id="course.description" /></label>
+				<f:form.textarea rows="5" cols="30" property="description" id="description" class="form-control" />
+			</div>
 
-		<f:form.submit name="submit" value="{f:translate(id: 'action.update')}" />
-	</f:form>
+			<f:link.action action="index">
+				<span class="glyphicon glyphicon-backward"></span>
+				<f:translate id="action.back" />
+			</f:link.action>
+			<f:form.submit name="submit" value="{f:translate(id: 'action.update')}" class="btn btn-primary pull-right" />
+		</f:form>
+	</div>
 </f:section>

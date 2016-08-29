@@ -26,7 +26,7 @@
 								<f:link.action action="index" controller="Question" arguments="{course: course}">{course.title}</f:link.action>
 							</td>
 							<td class="text-right">
-								<f:link.action action="appraise" controller="Question" arguments="{course: course}" class="btn btn-info">
+								<f:link.action action="appraise" controller="Question" arguments="{course: course}" class="btn btn-info" target="_blank">
 									<f:translate id="assessment.title" />
 								</f:link.action>
 
@@ -37,7 +37,7 @@
 
 								<f:form action="delete" arguments="{course: course}" class="pull-right">
 									<span class="glyphicon"></span>
-									<f:form.submit name="delete" value="{f:translate(id: 'action.delete')}" class="btn btn-danger" />
+									<f:form.submit name="delete" value="{f:translate(id: 'action.delete')}" class="btn btn-danger {f:if(condition: '{course.numberQuestion} == 0', then: '', else: 'disabled')}" />
 								</f:form>
 							</td>
 						</tr>

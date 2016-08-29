@@ -5,7 +5,7 @@
 <f:section name="Content">
 	<div class="row">
 		<p class="list-group">
-			<f:link.action action="index" arguments="{question: question, course: question.course}">
+			<f:link.action action="index" controller="Question" arguments="{course: question.course}">
 				<span class="glyphicon glyphicon-backward"></span>
 				<f:translate id="action.back" />
 			</f:link.action>
@@ -31,17 +31,18 @@
 									<f:format.crop maxCharacters="50">{answer.content}</f:format.crop>
 								</f:link.action>
 							</td>
+							<td>
+								<span class="glyphicon {f:if(condition: '{answer.correct} == 1', then: 'text-success glyphicon-ok-circle', else: 'text-danger glyphicon-remove-circle')}" aria-hidden="true"></span>
+							</td>
 							<td class="text-right">
-								<i class="{f:if(condition: '{answer.correct} == 1', then: 'correct', else: 'incorrect')}"></i>
-
-								<f:link.action action="edit" arguments="{answer: answer, question: answer.question, course: answer.question.course}">
+								<f:link.action action="edit" arguments="{answer: answer, question: answer.question, course: answer.question.course}" class="btn btn-warning">
 									<span class="glyphicon glyphicon-edit"></span>
 									<f:translate id="action.edit" />
 								</f:link.action>
 
 								<f:form action="delete" arguments="{answer: answer, question: answer.question, course: answer.question.course}" class="pull-right">
 									<span class="glyphicon"></span>
-									<f:form.submit value="{f:translate(id: 'action.delete')}" />
+									<f:form.submit value="{f:translate(id: 'action.delete')}" class="btn btn-danger" />
 								</f:form>
 							</td>
 						</tr>
